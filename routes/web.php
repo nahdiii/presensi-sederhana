@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
 Route::group(['middleware' => ['auth','ceklevel:karyawan']], function () {
     route::post('/simpan-masuk',[PresensiController::class,'store'])->name('simpan-masuk');
     route::get('/presensi-masuk',[PresensiController::class,'index'])->name('presensi-masuk');    
+    route::get('/presensi-keluar',[PresensiController::class,'keluar'])->name('presensi-keluar');   
+    Route::post('ubah-presensi',[PresensiController::class,'presensipulang'])->name('ubah-presensi'); 
 });
 
 
